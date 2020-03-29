@@ -15,6 +15,8 @@ RUN apt-get update \
     ruby-dev \
     zlib1g-dev \
     liblzma-dev \
+    && apt-get purge -y && apt-get autoremove -y && apt-get autoclean -y \
+    && rm -rf /var/lib/apt/lists/* \
     && gem update --system \
     && gem install compass rubygems-update \
     && update_rubygems
